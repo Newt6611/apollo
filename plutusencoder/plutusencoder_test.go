@@ -464,9 +464,13 @@ func TestMissingStructTag(t *testing.T) {
 	m := MissingStructTag{
 		Val: 5,
 	}
-	_, err := plutusencoder.MarshalPlutus(m)
-	if err == nil {
-		t.Error("should have thrown error")
+	pd, err := plutusencoder.MarshalPlutus(m)
+	if err != nil {
+		t.Error(err)
+	}
+	b, _ := pd.MarshalCBOR()
+	if hex.EncodeToString(b) != "05" {
+		t.Errorf("encoding error, expect 05, but get %s\n", hex.EncodeToString(b))
 	}
 }
 

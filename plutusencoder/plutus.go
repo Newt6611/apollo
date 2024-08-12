@@ -266,8 +266,11 @@ func MarshalPlutus(v interface{}) (*PlutusData.PlutusData, error) {
 			overallContainer = PlutusData.PlutusDefArray{}
 			isIndef = false
 		default:
-			fmt.Println(typeOfStruct)
-			return nil, fmt.Errorf("error: unknown type")
+			// only when a struct with "_ struct{}" will need to match with IndefList, Map, DefList
+			if fields.Name == "_" {
+				fmt.Println(typeOfStruct)
+				return nil, fmt.Errorf("error: unknown type")
+			}
 		}
 		//get fields
 		for i := 0; i < types.NumField(); i++ {
@@ -313,6 +316,11 @@ func MarshalPlutus(v interface{}) (*PlutusData.PlutusData, error) {
 						Value:          PlutusData.PlutusDefArray{},
 					}
 				}
+
+				if overallContainer == nil {
+					return &boolPD, nil
+				}
+
 				if isMap {
 					nameBytes := serialization.NewCustomBytes(name)
 					overallContainer.(map[serialization.CustomBytes]PlutusData.PlutusData)[nameBytes] = boolPD
@@ -327,11 +335,17 @@ func MarshalPlutus(v interface{}) (*PlutusData.PlutusData, error) {
 				if values.Field(i).Kind() != reflect.Slice {
 					return nil, fmt.Errorf("error: Bytes field is not a slice")
 				}
+
 				pdb := PlutusData.PlutusData{
 					PlutusDataType: PlutusData.PlutusBytes,
 					Value:          values.Field(i).Interface().([]byte),
 					TagNr:          constr,
 				}
+
+				if overallContainer == nil {
+					return &pdb, nil
+				}
+
 				if isMap {
 					nameBytes := serialization.NewCustomBytes(name)
 					overallContainer.(map[serialization.CustomBytes]PlutusData.PlutusData)[nameBytes] = pdb
@@ -351,6 +365,11 @@ func MarshalPlutus(v interface{}) (*PlutusData.PlutusData, error) {
 					Value:          values.Field(i).Interface().(int64),
 					TagNr:          constr,
 				}
+
+				if overallContainer == nil {
+					return &pdi, nil
+				}
+
 				if isMap {
 					nameBytes := serialization.NewCustomBytes(name)
 
@@ -366,11 +385,17 @@ func MarshalPlutus(v interface{}) (*PlutusData.PlutusData, error) {
 				if values.Field(i).Kind() != reflect.String {
 					return nil, fmt.Errorf("error: StringBytes field is not string")
 				}
+
 				pdsb := PlutusData.PlutusData{
 					PlutusDataType: PlutusData.PlutusBytes,
 					Value:          []byte(values.Field(i).Interface().(string)),
 					TagNr:          constr,
 				}
+
+				if overallContainer == nil {
+					return &pdsb, nil
+				}
+
 				if isMap {
 					nameBytes := serialization.NewCustomBytes(name)
 					overallContainer.(map[serialization.CustomBytes]PlutusData.PlutusData)[nameBytes] = pdsb
@@ -389,11 +414,17 @@ func MarshalPlutus(v interface{}) (*PlutusData.PlutusData, error) {
 				if err != nil {
 					return nil, fmt.Errorf("error: HexString field is not string")
 				}
+
 				pdsb := PlutusData.PlutusData{
 					PlutusDataType: PlutusData.PlutusBytes,
 					Value:          hexString,
 					TagNr:          constr,
 				}
+
+				if overallContainer == nil {
+					return &pdsb, nil
+				}
+
 				if isMap {
 					nameBytes := serialization.NewCustomBytes(name)
 					overallContainer.(map[serialization.CustomBytes]PlutusData.PlutusData)[nameBytes] = pdsb
@@ -409,6 +440,11 @@ func MarshalPlutus(v interface{}) (*PlutusData.PlutusData, error) {
 				if err != nil {
 					return nil, fmt.Errorf("error marshalling: %v", err)
 				}
+
+				if overallContainer == nil {
+					return addpd, nil
+				}
+
 				if isMap {
 					nameBytes := serialization.NewCustomBytes(name)
 					overallContainer.(map[serialization.CustomBytes]PlutusData.PlutusData)[nameBytes] = *addpd
@@ -429,6 +465,15 @@ func MarshalPlutus(v interface{}) (*PlutusData.PlutusData, error) {
 					}
 					container = append(container, *pd)
 				}
+
+				if overallContainer == nil {
+					return &PlutusData.PlutusData{
+						PlutusDataType: PlutusData.PlutusArray,
+						Value:          container,
+						TagNr:          constr,
+					}, nil
+				}
+
 				if isMap {
 					nameBytes := serialization.NewCustomBytes(name)
 					overallContainer.(map[serialization.CustomBytes]PlutusData.PlutusData)[nameBytes] = PlutusData.PlutusData{
@@ -461,6 +506,15 @@ func MarshalPlutus(v interface{}) (*PlutusData.PlutusData, error) {
 					}
 					container = append(container, *pd)
 				}
+
+				if overallContainer == nil {
+					return &PlutusData.PlutusData{
+						PlutusDataType: PlutusData.PlutusArray,
+						Value:          container,
+						TagNr:          constr,
+					}, nil
+				}
+
 				if isMap {
 					nameBytes := serialization.NewCustomBytes(name)
 					overallContainer.(map[serialization.CustomBytes]PlutusData.PlutusData)[nameBytes] = PlutusData.PlutusData{
@@ -493,6 +547,15 @@ func MarshalPlutus(v interface{}) (*PlutusData.PlutusData, error) {
 					nameBytes := serialization.NewCustomBytes(values.Field(i).Index(j).Field(0).String())
 					container[nameBytes] = *pd
 				}
+
+				if overallContainer == nil {
+					return &PlutusData.PlutusData{
+						PlutusDataType: PlutusData.PlutusMap,
+						Value:          container,
+						TagNr:          constr,
+					}, nil
+				}
+
 				if isMap {
 					nameBytes := serialization.NewCustomBytes(name)
 					overallContainer.(map[serialization.CustomBytes]PlutusData.PlutusData)[nameBytes] = PlutusData.PlutusData{
