@@ -1,10 +1,12 @@
 package Fingerprint_test
 
 import (
+	"encoding/hex"
 	"testing"
 
 	"github.com/Salvionied/apollo/serialization/AssetName"
 	"github.com/Salvionied/apollo/serialization/Fingerprint"
+	"github.com/Salvionied/apollo/serialization/PlutusData"
 	"github.com/Salvionied/apollo/serialization/Policy"
 )
 
@@ -62,10 +64,42 @@ func TestFingerprintSet(t *testing.T) {
 	for _, data := range dataSet {
 		policyId, _ := Policy.New(data.policyId)
 		assetName := AssetName.NewAssetNameFromHexString(data.assetNameHex)
-		fingerprint := Fingerprint.New(policyId, assetName)
+		fingerprint := Fingerprint.New(*policyId, *assetName)
 		if fingerprint.String() != data.fingerprint {
 			t.Errorf("\nPolicyId: %v\nAssetName: %v\nFingerprint: %v\nExpected: %v",
 				data.policyId, data.assetNameHex, fingerprint.String(), data.fingerprint)
+		}
+	}
+}
+
+func TestFingerprintToPlutusData(t *testing.T) {
+	for _, data := range dataSet {
+		bPolicyId, _ := hex.DecodeString(data.policyId)
+		bAssetName, _ := hex.DecodeString(data.assetNameHex)
+
+		samplePd := PlutusData.PlutusData {
+			TagNr:          121,
+			PlutusDataType: PlutusData.PlutusArray,
+			Value: PlutusData.PlutusIndefArray{
+				PlutusData.PlutusData{
+					TagNr:          0,
+					PlutusDataType: PlutusData.PlutusBytes,
+					Value:          bPolicyId,
+				},
+				PlutusData.PlutusData{
+					TagNr:          0,
+					PlutusDataType: PlutusData.PlutusBytes,
+					Value:          bAssetName,
+				},
+			},
+		}
+
+		policy, _ := Policy.New(data.policyId)
+		assetName := AssetName.NewAssetNameFromHexString(data.assetNameHex)
+		fingerprint := Fingerprint.New(*policy, *assetName)
+		pd, _ := fingerprint.ToPlutusData()
+		if !samplePd.Equal(pd) {
+			t.Error("fingerprint to plutus data not correct")
 		}
 	}
 }

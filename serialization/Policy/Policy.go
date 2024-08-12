@@ -8,7 +8,7 @@ import (
 )
 
 type PolicyId struct {
-	Value string
+	Value string   `plutusType:"HexString"`
 }
 
 /*

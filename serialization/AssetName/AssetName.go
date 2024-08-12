@@ -8,7 +8,7 @@ import (
 )
 
 type AssetName struct {
-	value string
+	Value string   `plutusType:"HexString"`
 }
 
 /*
@@ -21,33 +21,33 @@ func NewAssetNameFromHexString(value string) *AssetName {
 		return nil
 	}
 
-	return &AssetName{value: value}
+	return &AssetName{Value: value}
 }
 
 func NewAssetNameFromString(value string) AssetName {
 	v := hex.EncodeToString([]byte(value))
-	return AssetName{value: v}
+	return AssetName{Value: v}
 }
 
 func (an AssetName) String() string {
-	decoded, _ := hex.DecodeString(an.value)
+	decoded, _ := hex.DecodeString(an.Value)
 	return string(decoded)
 }
 
 func (an AssetName) HexString() string {
-	return an.value
+	return an.Value
 }
 
 func (an *AssetName) MarshalCBOR() ([]byte, error) {
-	if an.value == "[]" || an.value == "" {
+	if an.Value == "[]" || an.Value == "" {
 		return cbor.Marshal(make([]byte, 0))
 	}
 
-	if len(an.value) > 64 {
+	if len(an.Value) > 64 {
 		return nil, errors.New("invalid asset name length")
 	}
 
-	byteSlice, _ := hex.DecodeString(an.value)
+	byteSlice, _ := hex.DecodeString(an.Value)
 
 	return cbor.Marshal(byteSlice)
 }
@@ -63,7 +63,7 @@ func (an *AssetName) UnmarshalCBOR(value []byte) error {
 		return errors.New("invalid asset name length")
 	}
 
-	an.value = hex.EncodeToString(res)
+	an.Value = hex.EncodeToString(res)
 
 	return nil
 }
