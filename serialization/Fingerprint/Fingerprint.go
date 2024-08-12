@@ -26,6 +26,9 @@ func New(policyId Policy.PolicyId, assetName AssetName.AssetName) *Fingerprint {
 
 
 func (f *Fingerprint) String() string {
+	if f.PolicyId.Value == "" && f.AssetName.Value == "" {
+		return "lovelace"
+	}
 	bs, _ := hex.DecodeString(f.PolicyId.Value + f.AssetName.HexString())
 	hasher, _ := blake2b.New(20, nil)
 	hasher.Write(bs)
