@@ -5,7 +5,7 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/Salvionied/apollo/serialization/Key"
+	"github.com/Newt6611/apollo/serialization/Key"
 	"github.com/Salvionied/cbor/v2"
 )
 

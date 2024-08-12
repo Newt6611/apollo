@@ -4,8 +4,8 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/Salvionied/apollo/serialization/PlutusData"
-	"github.com/Salvionied/apollo/serialization/Redeemer"
+	"github.com/Newt6611/apollo/serialization/PlutusData"
+	"github.com/Newt6611/apollo/serialization/Redeemer"
 	"github.com/Salvionied/cbor/v2"
 )
 

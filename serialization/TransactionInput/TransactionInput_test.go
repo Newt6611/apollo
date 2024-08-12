@@ -3,7 +3,7 @@ package TransactionInput_test
 import (
 	"testing"
 
-	"github.com/Salvionied/apollo/serialization/TransactionInput"
+	"github.com/Newt6611/apollo/serialization/TransactionInput"
 	"github.com/Salvionied/cbor/v2"
 )
 

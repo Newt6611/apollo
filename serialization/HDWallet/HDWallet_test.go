@@ -3,9 +3,9 @@ package HDWallet_test
 import (
 	"testing"
 
-	"github.com/Salvionied/apollo/serialization/Address"
-	"github.com/Salvionied/apollo/serialization/HDWallet"
-	"github.com/Salvionied/apollo/serialization/Key"
+	"github.com/Newt6611/apollo/serialization/Address"
+	"github.com/Newt6611/apollo/serialization/HDWallet"
+	"github.com/Newt6611/apollo/serialization/Key"
 )
 
 var MNEMONIC_12 = "test walk nut penalty hip pave soap entry language right filter choice"

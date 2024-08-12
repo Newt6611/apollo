@@ -1,10 +1,10 @@
 package TransactionWitnessSet
 
 import (
-	"github.com/Salvionied/apollo/serialization/NativeScript"
-	"github.com/Salvionied/apollo/serialization/PlutusData"
-	"github.com/Salvionied/apollo/serialization/Redeemer"
-	"github.com/Salvionied/apollo/serialization/VerificationKeyWitness"
+	"github.com/Newt6611/apollo/serialization/NativeScript"
+	"github.com/Newt6611/apollo/serialization/PlutusData"
+	"github.com/Newt6611/apollo/serialization/Redeemer"
+	"github.com/Newt6611/apollo/serialization/VerificationKeyWitness"
 	"github.com/Salvionied/cbor/v2"
 )
 

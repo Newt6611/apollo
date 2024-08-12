@@ -4,10 +4,10 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/Salvionied/apollo/serialization/AssetName"
-	"github.com/Salvionied/apollo/serialization/Fingerprint"
-	"github.com/Salvionied/apollo/serialization/PlutusData"
-	"github.com/Salvionied/apollo/serialization/Policy"
+	"github.com/Newt6611/apollo/serialization/AssetName"
+	"github.com/Newt6611/apollo/serialization/Fingerprint"
+	"github.com/Newt6611/apollo/serialization/PlutusData"
+	"github.com/Newt6611/apollo/serialization/Policy"
 )
 
 type data struct {

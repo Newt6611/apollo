@@ -11,9 +11,9 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/Salvionied/apollo/constants"
-	"github.com/Salvionied/apollo/serialization"
-	"github.com/Salvionied/apollo/serialization/Address"
+	"github.com/Newt6611/apollo/constants"
+	"github.com/Newt6611/apollo/serialization"
+	"github.com/Newt6611/apollo/serialization/Address"
 
 	"github.com/Salvionied/cbor/v2"
 

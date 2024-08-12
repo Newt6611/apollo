@@ -1,12 +1,12 @@
 package TransactionBody
 
 import (
-	"github.com/Salvionied/apollo/serialization"
-	"github.com/Salvionied/apollo/serialization/Certificate"
-	"github.com/Salvionied/apollo/serialization/MultiAsset"
-	"github.com/Salvionied/apollo/serialization/TransactionInput"
-	"github.com/Salvionied/apollo/serialization/TransactionOutput"
-	"github.com/Salvionied/apollo/serialization/Withdrawal"
+	"github.com/Newt6611/apollo/serialization"
+	"github.com/Newt6611/apollo/serialization/Certificate"
+	"github.com/Newt6611/apollo/serialization/MultiAsset"
+	"github.com/Newt6611/apollo/serialization/TransactionInput"
+	"github.com/Newt6611/apollo/serialization/TransactionOutput"
+	"github.com/Newt6611/apollo/serialization/Withdrawal"
 
 	"github.com/Salvionied/cbor/v2"
 	"golang.org/x/crypto/blake2b"

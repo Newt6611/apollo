@@ -1,13 +1,13 @@
 package apollotypes
 
 import (
-	"github.com/Salvionied/apollo/serialization"
-	serAddress "github.com/Salvionied/apollo/serialization/Address"
-	"github.com/Salvionied/apollo/serialization/Key"
-	"github.com/Salvionied/apollo/serialization/Transaction"
-	"github.com/Salvionied/apollo/serialization/TransactionWitnessSet"
-	"github.com/Salvionied/apollo/serialization/VerificationKeyWitness"
-	"github.com/Salvionied/apollo/txBuilding/Backend/Base"
+	"github.com/Newt6611/apollo/serialization"
+	serAddress "github.com/Newt6611/apollo/serialization/Address"
+	"github.com/Newt6611/apollo/serialization/Key"
+	"github.com/Newt6611/apollo/serialization/Transaction"
+	"github.com/Newt6611/apollo/serialization/TransactionWitnessSet"
+	"github.com/Newt6611/apollo/serialization/VerificationKeyWitness"
+	"github.com/Newt6611/apollo/txBuilding/Backend/Base"
 )
 
 type Wallet interface {

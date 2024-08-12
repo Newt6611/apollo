@@ -7,9 +7,9 @@ import (
 	"reflect"
 	"strconv"
 
-	"github.com/Salvionied/apollo/serialization"
-	"github.com/Salvionied/apollo/serialization/Address"
-	"github.com/Salvionied/apollo/serialization/PlutusData"
+	"github.com/Newt6611/apollo/serialization"
+	"github.com/Newt6611/apollo/serialization/Address"
+	"github.com/Newt6611/apollo/serialization/PlutusData"
 	"github.com/Salvionied/cbor/v2"
 )
 

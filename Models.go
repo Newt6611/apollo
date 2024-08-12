@@ -1,16 +1,16 @@
 package apollo
 
 import (
-	"github.com/Salvionied/apollo/serialization"
-	"github.com/Salvionied/apollo/serialization/Address"
-	"github.com/Salvionied/apollo/serialization/AssetName"
-	"github.com/Salvionied/apollo/serialization/MultiAsset"
-	"github.com/Salvionied/apollo/serialization/PlutusData"
-	"github.com/Salvionied/apollo/serialization/Policy"
-	"github.com/Salvionied/apollo/serialization/TransactionOutput"
-	"github.com/Salvionied/apollo/serialization/Value"
-	"github.com/Salvionied/apollo/txBuilding/Backend/Base"
-	"github.com/Salvionied/apollo/txBuilding/Utils"
+	"github.com/Newt6611/apollo/serialization"
+	"github.com/Newt6611/apollo/serialization/Address"
+	"github.com/Newt6611/apollo/serialization/AssetName"
+	"github.com/Newt6611/apollo/serialization/MultiAsset"
+	"github.com/Newt6611/apollo/serialization/PlutusData"
+	"github.com/Newt6611/apollo/serialization/Policy"
+	"github.com/Newt6611/apollo/serialization/TransactionOutput"
+	"github.com/Newt6611/apollo/serialization/Value"
+	"github.com/Newt6611/apollo/txBuilding/Backend/Base"
+	"github.com/Newt6611/apollo/txBuilding/Utils"
 )
 
 type Unit struct {

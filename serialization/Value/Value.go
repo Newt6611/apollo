@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/Salvionied/apollo/serialization/Amount"
-	"github.com/Salvionied/apollo/serialization/MultiAsset"
+	"github.com/Newt6611/apollo/serialization/Amount"
+	"github.com/Newt6611/apollo/serialization/MultiAsset"
 
 	"github.com/Salvionied/cbor/v2"
 )

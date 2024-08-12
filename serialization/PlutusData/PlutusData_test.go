@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/Salvionied/apollo/serialization/PlutusData"
+	"github.com/Newt6611/apollo/serialization/PlutusData"
 	"github.com/Salvionied/cbor/v2"
 )
 

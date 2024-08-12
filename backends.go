@@ -3,11 +3,11 @@ package apollo
 import (
 	"fmt"
 
-	"github.com/Salvionied/apollo/constants"
+	"github.com/Newt6611/apollo/constants"
 
-	"github.com/Salvionied/apollo/txBuilding/Backend/BlockFrostChainContext"
-	"github.com/Salvionied/apollo/txBuilding/Backend/FixedChainContext"
-	"github.com/Salvionied/apollo/txBuilding/Backend/MaestroChainContext"
+	"github.com/Newt6611/apollo/txBuilding/Backend/BlockFrostChainContext"
+	"github.com/Newt6611/apollo/txBuilding/Backend/FixedChainContext"
+	"github.com/Newt6611/apollo/txBuilding/Backend/MaestroChainContext"
 )
 
 /*

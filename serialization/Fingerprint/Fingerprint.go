@@ -3,11 +3,11 @@ package Fingerprint
 import (
 	"encoding/hex"
 
-	"github.com/Salvionied/apollo/crypto/bech32"
-	"github.com/Salvionied/apollo/plutusencoder"
-	"github.com/Salvionied/apollo/serialization/AssetName"
-	"github.com/Salvionied/apollo/serialization/PlutusData"
-	"github.com/Salvionied/apollo/serialization/Policy"
+	"github.com/Newt6611/apollo/crypto/bech32"
+	"github.com/Newt6611/apollo/plutusencoder"
+	"github.com/Newt6611/apollo/serialization/AssetName"
+	"github.com/Newt6611/apollo/serialization/PlutusData"
+	"github.com/Newt6611/apollo/serialization/Policy"
 	"golang.org/x/crypto/blake2b"
 )
 

@@ -4,8 +4,8 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/Salvionied/apollo/serialization/Metadata"
-	"github.com/Salvionied/apollo/serialization/NativeScript"
+	"github.com/Newt6611/apollo/serialization/Metadata"
+	"github.com/Newt6611/apollo/serialization/NativeScript"
 	"github.com/Salvionied/cbor/v2"
 )
 

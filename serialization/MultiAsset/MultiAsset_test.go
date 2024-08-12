@@ -3,11 +3,11 @@ package MultiAsset_test
 import (
 	"testing"
 
-	"github.com/Salvionied/apollo/serialization/Asset"
-	"github.com/Salvionied/apollo/serialization/AssetName"
-	"github.com/Salvionied/apollo/serialization/MultiAsset"
-	"github.com/Salvionied/apollo/serialization/Policy"
-	"github.com/Salvionied/apollo/serialization/Value"
+	"github.com/Newt6611/apollo/serialization/Asset"
+	"github.com/Newt6611/apollo/serialization/AssetName"
+	"github.com/Newt6611/apollo/serialization/MultiAsset"
+	"github.com/Newt6611/apollo/serialization/Policy"
+	"github.com/Newt6611/apollo/serialization/Value"
 )
 
 var policyT1 = Policy.PolicyId{Value: "ec8b7d1dd0b124e8333d3fa8d818f6eac068231a287554e9ceae490e"}

@@ -3,17 +3,17 @@ package txBuilding_test
 import (
 	"testing"
 
-	"github.com/Salvionied/apollo/serialization/Address"
-	"github.com/Salvionied/apollo/serialization/Asset"
-	"github.com/Salvionied/apollo/serialization/AssetName"
-	"github.com/Salvionied/apollo/serialization/MultiAsset"
-	"github.com/Salvionied/apollo/serialization/Policy"
-	"github.com/Salvionied/apollo/serialization/TransactionOutput"
-	"github.com/Salvionied/apollo/serialization/UTxO"
-	"github.com/Salvionied/apollo/serialization/Value"
-	testutils "github.com/Salvionied/apollo/testUtils"
-	"github.com/Salvionied/apollo/txBuilding/Backend/FixedChainContext"
-	"github.com/Salvionied/apollo/txBuilding/CoinSelection"
+	"github.com/Newt6611/apollo/serialization/Address"
+	"github.com/Newt6611/apollo/serialization/Asset"
+	"github.com/Newt6611/apollo/serialization/AssetName"
+	"github.com/Newt6611/apollo/serialization/MultiAsset"
+	"github.com/Newt6611/apollo/serialization/Policy"
+	"github.com/Newt6611/apollo/serialization/TransactionOutput"
+	"github.com/Newt6611/apollo/serialization/UTxO"
+	"github.com/Newt6611/apollo/serialization/Value"
+	testutils "github.com/Newt6611/apollo/testUtils"
+	"github.com/Newt6611/apollo/txBuilding/Backend/FixedChainContext"
+	"github.com/Newt6611/apollo/txBuilding/CoinSelection"
 )
 
 var TESTADDRESS = "addr_test1vrm9x2zsux7va6w892g38tvchnzahvcd9tykqf3ygnmwtaqyfg52x"

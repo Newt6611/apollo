@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/Salvionied/apollo/plutusencoder"
-	"github.com/Salvionied/apollo/serialization/Address"
-	"github.com/Salvionied/apollo/serialization/PlutusData"
+	"github.com/Newt6611/apollo/plutusencoder"
+	"github.com/Newt6611/apollo/serialization/Address"
+	"github.com/Newt6611/apollo/serialization/PlutusData"
 	"github.com/Salvionied/cbor/v2"
 )
 

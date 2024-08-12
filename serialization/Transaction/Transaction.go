@@ -3,10 +3,10 @@ package Transaction
 import (
 	"fmt"
 
-	"github.com/Salvionied/apollo/serialization"
-	"github.com/Salvionied/apollo/serialization/Metadata"
-	"github.com/Salvionied/apollo/serialization/TransactionBody"
-	"github.com/Salvionied/apollo/serialization/TransactionWitnessSet"
+	"github.com/Newt6611/apollo/serialization"
+	"github.com/Newt6611/apollo/serialization/Metadata"
+	"github.com/Newt6611/apollo/serialization/TransactionBody"
+	"github.com/Newt6611/apollo/serialization/TransactionWitnessSet"
 	"github.com/Salvionied/cbor/v2"
 )
 

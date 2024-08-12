@@ -4,10 +4,10 @@ import (
 	"encoding/hex"
 	"testing"
 
-	"github.com/Salvionied/apollo/serialization/Transaction"
-	"github.com/Salvionied/apollo/serialization/TransactionBody"
-	"github.com/Salvionied/apollo/serialization/TransactionInput"
-	"github.com/Salvionied/apollo/serialization/TransactionWitnessSet"
+	"github.com/Newt6611/apollo/serialization/Transaction"
+	"github.com/Newt6611/apollo/serialization/TransactionBody"
+	"github.com/Newt6611/apollo/serialization/TransactionInput"
+	"github.com/Newt6611/apollo/serialization/TransactionWitnessSet"
 	"github.com/Salvionied/cbor/v2"
 )
 

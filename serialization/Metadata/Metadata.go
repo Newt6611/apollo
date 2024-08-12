@@ -1,9 +1,9 @@
 package Metadata
 
 import (
-	"github.com/Salvionied/apollo/serialization/NativeScript"
+	"github.com/Newt6611/apollo/serialization/NativeScript"
 
-	"github.com/Salvionied/apollo/serialization"
+	"github.com/Newt6611/apollo/serialization"
 
 	"github.com/Salvionied/cbor/v2"
 )

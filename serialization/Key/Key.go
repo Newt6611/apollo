@@ -5,8 +5,8 @@ import (
 	"encoding/hex"
 	"fmt"
 
-	"github.com/Salvionied/apollo/crypto/bip32"
-	"github.com/Salvionied/apollo/serialization"
+	"github.com/Newt6611/apollo/crypto/bip32"
+	"github.com/Newt6611/apollo/serialization"
 
 	"github.com/Salvionied/cbor/v2"
 	"golang.org/x/crypto/blake2b"
