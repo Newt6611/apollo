@@ -11,15 +11,15 @@ PredefinedPlutusTypes: Address
 Sample
 ```
 type Datum struct {
-    _ struct `plutusType:IndefList plutusConstr:1`
-    Pkh []byte `plutusType:Bytes`
-    Amount int64 `plutusType:Int`
+    _ struct `plutusType:"IndefList" plutusConstr:"1"`
+    Pkh []byte `plutusType:"Bytes"`
+    Amount int64 `plutusType:"Int"`
 }
 
 type NestedDatum struct {
-     _ struct `plutusType:IndefList plutusConstr:1`
-    Pkh []byte `plutusType:Bytes`
-    Amount int64 `plutusType:Int`
+     _ struct `plutusType:"IndefList" plutusConstr:"1"`
+    Pkh []byte `plutusType:"Bytes"`
+    Amount int64 `plutusType:"Int"`
     Extra Datum
 }
 
